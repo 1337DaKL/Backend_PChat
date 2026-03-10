@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 
-// Gọi API: GET /api/users
-router.get('/', authMiddleware, userController.getAllUsers);
+
+router.post('/register', userController.register);
+
+
+router.get('/', userController.getAllUsers);
 
 module.exports = router;
